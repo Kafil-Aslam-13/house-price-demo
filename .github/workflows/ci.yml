@@ -36,7 +36,7 @@ jobs:
           git config --global user.email "actions@github.com"
           git config --global user.name "GitHub Actions"
 
-          git clone https://KAFIL-ASLAM:${HF_TOKEN}@huggingface.co/spaces/KAFIL-ASLAM/house-price-demo hf_space
+          git clone https://Kafil-Aslam-13:${HF_TOKEN}@huggingface.co/spaces/KAFIL-ASLAM/house-price-demo hf_space
 
           cp -r pipeline hf_space/
           cp -r api hf_space/
