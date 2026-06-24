@@ -6,7 +6,7 @@ from api.schemas import HouseInput, PredictionOutput
 
 app = FastAPI(title="House Price Demo App", version="1.0.0")
 
-# LOAD PIPELINE ONLY
+# LOAD PIPELINE
 try:
     pipeline = joblib.load("artifacts/house_price_pipeline.joblib")
 except Exception as e:
@@ -27,6 +27,7 @@ def predict(house: HouseInput):
 
     if pipeline is None:
         raise HTTPException(status_code=503, detail="Model not loaded")
+    
     bmap = {"yes": 1, "no": 0}
 
     try:

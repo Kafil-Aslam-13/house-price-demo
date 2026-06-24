@@ -48,14 +48,13 @@ def run():
         ("bin", binary_pipeline, config["binary_columns"])
     ])
 
-    # IMPORTANT FIX (prevents hidden mismatch later)
     preprocessor.fit(X)
 
     Path(out).mkdir(parents=True, exist_ok=True)
 
     joblib.dump(preprocessor, f"{out}/preprocessor.joblib")
 
-    # DEBUG INFO (keep this!)
+
     print("[Stage 03] Features created:",
           preprocessor.fit(X).transform(X).shape[1])
 
